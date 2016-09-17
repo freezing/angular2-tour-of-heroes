@@ -13,14 +13,20 @@ import { MdTooltipModule } from '@angular2-material/tooltip';
 import { MdSliderModule } from '@angular2-material/slider';
 import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 
-import { AppComponent } from './app.component';
+import {HeroesComponent} from './heroes/heroes.component';
 import 'hammerjs'
 import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
+import {HeroService} from "./shared/service/hero.service";
+import {AppComponent} from "./app.component";
+import {routing} from "./app.routes";
+import {DashboardComponent} from "./dashboard/dashboard.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent
+    HeroesComponent,
+    HeroDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +40,9 @@ import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
     MdTooltipModule.forRoot(),
     MdSliderModule.forRoot(),
     MdIconModule.forRoot(),
+    routing
   ],
-  providers: [MdIconRegistry],
+  providers: [MdIconRegistry, HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
