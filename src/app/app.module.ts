@@ -15,10 +15,12 @@ import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 
 import { AppComponent } from './app.component';
 import 'hammerjs'
+import { HeroDetailComponent } from "./hero-detail/hero-detail.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
